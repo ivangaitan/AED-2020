@@ -27,3 +27,45 @@ Un valor que indique si viajó al exterior.
 Un valor que indique si estuvo en zonas nacionales con casos de transmisión local confirmados.
 Una vez cargados los datos que correspondan, según el esquema anterior, procesar esos datos y notificar en pantalla los resultados pedidos en el cuadro de diagnóstico.
 """
+
+__author__ = 'TP1-G130'
+
+print('Bienvenido al Programa para Diagnóstico del COVID-19.')
+
+edad = int(input('Ingrese la edad del paciente: '))
+tempCorp = float(input('Ingrese la temperatura corporal del paciente: '))
+neumonia = int(input('En caso de que el paciente tenga neumonia, marque "1". Si el paciente no tiene neumonia marque "2": '))
+
+if neumonia == 1:
+    alerta = 'El paciente es un caso sospechoso'
+elif neumonia == 2:
+    alerta = ''
+else:
+    print('Por favor, ingrese una opcion valida.')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
