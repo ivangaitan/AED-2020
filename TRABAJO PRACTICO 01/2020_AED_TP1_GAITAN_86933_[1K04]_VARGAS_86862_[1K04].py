@@ -31,18 +31,33 @@ Una vez cargados los datos que correspondan, según el esquema anterior, procesa
 __author__ = 'TP1-G130'
 
 print('Bienvenido al Programa para Diagnóstico del COVID-19.')
-
+#Carga de datos del paciente
 edad = int(input('Ingrese la edad del paciente: '))
 tempCorp = float(input('Ingrese la temperatura corporal del paciente: '))
 neumonia = int(input('En caso de que el paciente tenga neumonia, marque "1". Si el paciente no tiene neumonia marque "2": '))
 
+fiebre = tempCorp > 37
+
 if neumonia == 1:
-    alerta = 'El paciente es un caso sospechoso'
+    alerta1 = 'El paciente es un caso SOSPECHOSO de COVID-19'
 elif neumonia == 2:
-    alerta = ''
+    if fiebre:
+        #carga variables sintomas
+        tos = int(input('En caso de que el paciente tenga Tos, marque "1". Si el paciente no tiene Tos marque "2": '))
+        odinofagia = int(input('En caso de que el paciente tenga odinofagia, marque "1". Si el paciente no tiene odinofagia marque "2": '))
+        difRespiratoria = int(input('En caso de que el paciente tenga Dificultad Respiratoria, marque "1". Si el paciente no tiene Dificultad Respiratoria marque "2": '))
+        if tos == 1 or odinofagia == 1 or difRespiratoria == 1:
+            perSalud = int(input('Si el paciente es personal de salud, marque "1", si no lo es, marque "2": '))
+            contactoCasoConfirmado = int(input('Si el paciente estuvo en contacto con algun caso confirmado de COVID-19, marque "1", si no lo es, marque "2": '))
+            viajExt = int(input('Si el paciente tiene registro de viaje al exterior en los ultimos 14 dias, marque "1", si no lo es, marque "2": '))
+            transLocal = int(input('Si el paciente estuvo en zonas nacionales con casos de transmision local confirmada, marque "1", si no lo es, marque "2": '))
+                    
 else:
     print('Por favor, ingrese una opcion valida.')
 
+
+
+#(tos == 1 or odinofagia == 1 or difRespiratoria == 1)
 
 
 
