@@ -44,7 +44,7 @@ if neumonia == 2:
             viajExt = int(input('Si el paciente tiene registro de viaje al exterior en los ultimos 14 dias, marque "1", si no lo es, marque "2": '))
             transLocal = int(input('Si el paciente estuvo en zonas nacionales con casos de transmision local confirmada, marque "1", si no lo es, marque "2": '))
             alerta1
-        elif tos == 1 and odinofagia == 1 or difRespiratoria == 1 and transLocal ==1:
+        elif (tos == 1 and odinofagia == 1 or tos == 1 and difRespiratoria == 1 or odinofagia == 1 and difRespiratoria == 1) and transLocal ==1:
             alerta2
     elif edad > 60:
         alerta3
