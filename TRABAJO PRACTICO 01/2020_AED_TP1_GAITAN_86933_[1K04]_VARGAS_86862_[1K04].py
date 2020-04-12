@@ -26,32 +26,34 @@ edad = int(input('Ingrese la edad del paciente: '))
 tempCorp = float(input('Ingrese la temperatura corporal del paciente: '))
 neumonia = int(input('En caso de que el paciente tenga neumonia, marque "1". Si el paciente no tiene neumonia marque "2": '))
 
-fiebre = tempCorp > 37
+#fiebre = tempCorp > 37
 
 alerta1 = str('El paciente es un caso SOSPECHOSO de COVID-19.')
 alerta2 = str('El paciente es un caso Autoctono..')
 alerta3 = str('Caso riesgoso, paciente mayor a 60 años.')
 
+
 if neumonia == 2:
-    if fiebre:
-        #carga variables sintomas
+    if tempCorp > 37:
+        # carga variables sintomas
         tos = int(input('En caso de que el paciente tenga Tos, marque "1". Si el paciente no tiene Tos marque "2": '))
         odinofagia = int(input('En caso de que el paciente tenga odinofagia, marque "1". Si el paciente no tiene odinofagia marque "2": '))
         difRespiratoria = int(input('En caso de que el paciente tenga Dificultad Respiratoria, marque "1". Si el paciente no tiene Dificultad Respiratoria marque "2": '))
-        if (tos == 1 or odinofagia == 1 or difRespiratoria == 1):
+        if tos == 1 or odinofagia == 1 or difRespiratoria == 1:
             perSalud = int(input('Si el paciente es personal de salud, marque "1", si no lo es, marque "2": '))
             contactoCasoConfirmado = int(input('Si el paciente estuvo en contacto con algun caso confirmado de COVID-19, marque "1", si no lo es, marque "2": '))
             viajExt = int(input('Si el paciente tiene registro de viaje al exterior en los ultimos 14 dias, marque "1", si no lo es, marque "2": '))
             transLocal = int(input('Si el paciente estuvo en zonas nacionales con casos de transmision local confirmada, marque "1", si no lo es, marque "2": '))
             if (tos == 1 and odinofagia == 1 or tos == 1 and difRespiratoria == 1 or odinofagia == 1 and difRespiratoria == 1) and transLocal == 1:
                 print(alerta2)
-        else:
-            print(alerta1)
+            else:
+                print(alerta1)
     elif edad > 60:
-        pritn(alerta3)
+        print(alerta3)
+    elif edad <= 60:
+        print('Paciente No sospechoso')
 elif neumonia == 1:
     print(alerta1)
-
 else:
     print('Por favor, ingrese una opcion valida.')
 
