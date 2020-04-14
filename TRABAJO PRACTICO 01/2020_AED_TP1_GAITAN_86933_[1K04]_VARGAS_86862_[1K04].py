@@ -26,10 +26,6 @@ edad = int(input('\nIngrese la edad del paciente: '))
 tempCorp = float(input('Ingrese la temperatura corporal del paciente: '))
 neumonia = int(input('En caso de que el paciente tenga NEUMONIA, marque "1".\nSi el paciente no tiene NEUMONIA marque "2":\n --> '))
 
-alerta1 = str('El paciente es un CASO SOSPECHOSO de COVID-19.')
-alerta2 = str('El paciente es un CASO AUTOCTONO.')
-alerta3 = str('CASO RIESGOSO, paciente mayor a 60 años.')
-
 if neumonia == 2:
     if tempCorp > 37:
         # Carga variables sintomas
