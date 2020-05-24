@@ -1,13 +1,16 @@
-cuenta_usuario = str(input("Ingrese su usuario: ")).capitalize()
-
-start =  cuenta_usuario.startswith(".")
-end =  cuenta_usuario.endswith(".")
+cuenta_usuario  = str(input("Ingrese su usuario: ")).capitalize()
 arroba = cuenta_usuario.count("@")
-inicia_arroba = cuenta_usuario.startswith("@")
-finaliza_arroba = cuenta_usuario.endswith("@")
-posicion_ultimo_caracter = len(cuenta_usuario) - 1
+intentos = 0
 
-if '..' in cuenta_usuario or start == True or end == True or arroba > 1 or inicia_arroba == True or finaliza_arroba == True:
-    cuenta_usuario = False
+while '..' in cuenta_usuario or cuenta_usuario.startswith(".") == True or cuenta_usuario.endswith(".") == True or arroba > 1 or arroba == 0 or cuenta_usuario.startswith("@") == True or cuenta_usuario.endswith("@") == True or not cuenta_usuario:
+    intentos += 1
+    if intentos == 3:
+        print ("Demasiados intentos")
+        break;
+    cuenta_usuario = str(input("El usuario ingresado es incorrecto, ingrese nuevamente el usuario: "))
+    arroba = cuenta_usuario.count("@")
 
-print (cuenta_usuario)
+
+
+
+
