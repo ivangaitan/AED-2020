@@ -24,7 +24,7 @@ print('Bienvenido al Programa para Diagnóstico del COVID-19.')
 # Carga de datos del paciente
 edad = int(input('\nIngrese la edad del paciente: '))
 tempCorp = float(input('Ingrese la temperatura corporal del paciente: '))
-neumonia = int(input('En caso de que el paciente tenga NEUMONIA, marque "1".\nSi el paciente no tiene NEUMONIA marque "2":\n --> '))
+neumonia = int(input('En caso de que el paciente tenga NEUMONIA ya evidenciada, marque "1".\nSi el paciente no tiene NEUMONIA ya evidenciada marque "2":\n --> '))
 
 if neumonia == 2:
     if tempCorp > 37:
