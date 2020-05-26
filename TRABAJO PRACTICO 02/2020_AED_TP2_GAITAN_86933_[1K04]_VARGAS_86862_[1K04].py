@@ -1,11 +1,15 @@
 import random
 
 cuenta_usuario = str(input("Ingrese su usuario: ")).capitalize()
-arroba = cuenta_usuario.count("@")
+arroba = 0
 intentos = 0
 
+for a in cuenta_usuario:
+    if a == '@':
+        arroba+= 1
+
 # Validar cuenta...
-while '..' in cuenta_usuario or cuenta_usuario.startswith(".") == True or cuenta_usuario.endswith(".") == True or arroba > 1 or arroba == 0 or cuenta_usuario.startswith("@") == True or cuenta_usuario.endswith("@") == True or not cuenta_usuario:
+while '..' in cuenta_usuario or not cuenta_usuario or cuenta_usuario[0] == '.' or cuenta_usuario[-1] == '.' or arroba > 1 or arroba == 0 or cuenta_usuario[-1] == '@' or  cuenta_usuario[0] == '@':
     intentos += 1
     if intentos == 3:
         print("Demasiados intentos")
@@ -15,12 +19,10 @@ while '..' in cuenta_usuario or cuenta_usuario.startswith(".") == True or cuenta
 
 # Crear funciones
 
-
 def cantConfirmados(a):
     if a == 'Positivo':
         return True
     return False
-
 
 def porcentaje(b, c):
     por = (c * 100) / b
